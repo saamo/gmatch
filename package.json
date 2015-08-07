@@ -1,0 +1,29 @@
+{
+  "name": "gmatch",
+  "version": "1.0.0",
+  "description": "Compare JSON keys",
+  "main": "index.js",
+  "keywords": [
+    "compare",
+    "json",
+    "object",
+    "keys",
+    "schema"
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saamo/gmatch.git"
+  },
+  "author": "Samir Djellil <samir@djellil.com> (http://samirdjellil.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saamo/gmatch/issues"
+  },
+  "homepage": "https://github.com/saamo/gmatch#readme",
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}
