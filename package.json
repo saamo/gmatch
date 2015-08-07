@@ -1,14 +1,14 @@
 {
   "name": "gmatch",
   "version": "1.0.0",
-  "description": "Compare JSON keys",
+  "description": "Convenient way to match regular expressions globally in JavaScript",
   "main": "index.js",
   "keywords": [
-    "compare",
-    "json",
-    "object",
-    "keys",
-    "schema"
+    "match",
+    "regular",
+    "expression",
+    "pattern",
+    "global"
   ],
   "scripts": {
     "test": "mocha"
