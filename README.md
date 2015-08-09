@@ -1,8 +1,8 @@
 # Gmatch
 
-There is a _catch_ in JavaScript language. When you want to match regular expression _globally_ and return only certain groups at the same time, well, it's not that simple. It is possible but you have to put a little effort into it. This module helps you.
+There is a _catch_ in JavaScript language. When you want to match regular expression _globally_ and return only certain groups at the same time, well, it's not that simple.
 
-More about this typical _wtf_ problem can be found [here](http://stackoverflow.com/a/844049).
+It is possible but you have to put a little effort into it as you can see [here](http://stackoverflow.com/a/844049). This module will help you avoid writing this extra code.
 
 ## Install
 
@@ -25,13 +25,12 @@ console.log(matches);
 And the output is:
 
 ```bash
-['A', 'B']
-
+[ 'A', 'B' ]
 ```
 
 ## This is a typical _wtf_ thing
 
-### [String.prototype.match(pattern)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+### [String.prototype.match(regexp)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
 
 This results in:
 
@@ -41,7 +40,7 @@ This results in:
 
 So no capturing groups at all. It returns the whole match.
 
-### [RegEx.prototype.exec(str)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec)
+### [RegExp.prototype.exec(str)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec)
 
 This looks better...
 
@@ -59,7 +58,7 @@ Until you realize that there is something wrong – the second match is missing 
 Finally the gmatch does what a _sane_ person would expect.
 
 ```
-['A', 'B']
+[ 'A', 'B' ]
 ```
 
 ## License

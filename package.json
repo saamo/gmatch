@@ -1,7 +1,7 @@
 {
   "name": "gmatch",
   "version": "1.0.1",
-  "description": "Convenient way to match regular expressions globally in JavaScript",
+  "description": "Convenient way of matching regular expressions globally in JavaScript",
   "main": "index.js",
   "keywords": [
     "match",
