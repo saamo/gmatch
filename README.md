@@ -1,5 +1,8 @@
 # Gmatch
 
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+
 There is a _catch_ in JavaScript language. When you want to match regular expression _globally_ and return only certain groups at the same time, well, it's not that simple.
 
 It is possible but you have to put a little effort into it as you can see [here](http://stackoverflow.com/a/844049). This module will help you avoid writing this extra code.
@@ -64,3 +67,8 @@ Finally the gmatch does what a _sane_ person would expect.
 ## License
 
 MIT © [Samir Djellil](http://samirdjellil.com)
+
+[npm-image]: https://img.shields.io/npm/v/gmatch.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/gmatch
+[travis-image]: https://img.shields.io/travis/saamo/gmatch/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/saamo/gmatch
