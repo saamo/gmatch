@@ -3,9 +3,9 @@
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
 
-There is a _catch_ in JavaScript language. When you want to match regular expression _globally_ and return only certain groups at the same time, well, it's not that simple.
+When you want to match regular expression globally and return only certain capturing groups _at the same time_, well, you're gonna have a [hard time](http://stackoverflow.com/a/844049).
 
-It is possible but you have to put a little effort into it as you can see [here](http://stackoverflow.com/a/844049). This module will help you avoid writing this extra code.
+This module will help you to avoid writing extra code to handle this unpleasant thing.
 
 ## Install
 
@@ -18,8 +18,8 @@ npm install --save gmatch
 ```js
 var gmatch = require('gmatch');
 
-var str = 'Return this (A) and this (B) group. Not that (C) group.';
-var pattern = /this \((.)\)/g;
+var str = 'Return A and B. And return C and D.';
+var pattern = /(.) and (.)/g;
 
 var matches = gmatch(str, pattern);
 console.log(matches);
@@ -27,18 +27,18 @@ console.log(matches);
 
 And the output is:
 
-```bash
-[ 'A', 'B' ]
+```js
+[ [ 'A', 'B' ], [ 'C', 'D' ] ]
 ```
 
-## This is a typical _wtf_ thing
+## But Why?
 
 ### [String.prototype.match(regexp)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
 
 This results in:
 
-```
-[ 'this (A)', 'this (B)' ]
+```js
+[ 'A and B', 'C and D' ]
 ```
 
 So no capturing groups at all. It returns the whole match.
@@ -47,21 +47,22 @@ So no capturing groups at all. It returns the whole match.
 
 This looks better...
 
-```
-[ 'this (A)',
+```js
+[ 'A and B',
   'A',
+  'B',
   index: 7,
-  input: 'Return this (A) and this (B) group. Not that (C) group.' ]
+  input: 'Return A and B. And return C and D.' ]
 ```
 
-Until you realize that there is something wrong – the second match is missing ([explanation](http://stackoverflow.com/a/844049)).
+Until you realize that there is something wrong — the second match is missing ([explanation](http://stackoverflow.com/a/844049)).
 
 ### Gmatch
 
 Finally the gmatch does what a _sane_ person would expect.
 
-```
-[ 'A', 'B' ]
+```js
+[ [ 'A', 'B' ], [ 'C', 'D' ] ]
 ```
 
 ## License

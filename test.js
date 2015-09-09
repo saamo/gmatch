@@ -1,13 +1,30 @@
 var assert = require('assert');
 var gmatch = require('./');
 
-it('should return only captured groups', function() {
+it('should return an array of capturing groups arrays', function() {
+  var actual = gmatch(
+    'Return A and B. And return C and D.',
+    /(.) and (.)/g
+  );
+  var expected = [['A', 'B'], ['C', 'D']];
+
   assert.deepEqual(
-    gmatch(
-      'Return this (A) and this (B) group. Not that (C) group.',
-      /this \((.)\)/g
-    ),
-    ['A', 'B'],
-    'it should have returned an array only with captured groups'
+    actual,
+    expected,
+    'it should have returned an array of capturing groups arrays'
+  );
+});
+
+it('should return an empty array', function() {
+  var actual = gmatch(
+    'Return an empty array.',
+    /(.) and (.)/g
+  );
+  var expected = [];
+
+  assert.deepEqual(
+    actual,
+    expected,
+    'it should have returned an empty array'
   );
 });

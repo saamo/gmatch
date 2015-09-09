@@ -1,7 +1,18 @@
-module.exports = function(str, pattern) {
+var gmatch = function(str, pattern) {
   var matches = [];
   while (match = pattern.exec(str)) {
-    matches.push(match[1]);
+    var capturedGroups = extractCapturedGroups(match);
+    matches.push(capturedGroups);
   }
   return matches;
 }
+
+var extractCapturedGroups = function(match) {
+  var capturedGroups = [];
+  for (var i = 1; i < match.length; i++) {
+    capturedGroups.push(match[i]);
+  }
+  return capturedGroups;
+};
+
+module.exports = gmatch;
